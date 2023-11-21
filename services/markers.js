@@ -9,7 +9,7 @@ async function newMarkers() {
     try {
         const markers = await getMarker();
         markers?.map((m) => {
-            mp.markers.new(m.type, { x: m.x, y: m.y, z: m.z }, m.color);
+            mp.markers.new(m.type, { x: m.x, y: m.y, z: m.z }, m.scale);
         })
     } catch (error) {
         console.error('Error getMarker:', error);
