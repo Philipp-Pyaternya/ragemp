@@ -10,7 +10,7 @@ async function newColshapes() {
         const colshapes = await getColshapes();
         colshapes.map(item => {
 
-            const colshape = mp.colshapes.newCircle(item.x, item.y, item.range);
+            const colshape = mp.colshapes.newSphere(item.x, item.y, item.z, item.range);
 
             mp.events.add("playerEnterColshape", (player, shape) => {
                 if (shape === colshape) {

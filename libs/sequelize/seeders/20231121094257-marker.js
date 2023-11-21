@@ -8,7 +8,7 @@ module.exports = {
                 x: -44.24192810058594,
                 y: 29.43122100830078,
                 z: 60.76398468017578,
-                scale: 15,
+                scale: 20,
                 direction: '',
                 rotation: '',
                 color: 15,
