@@ -17,7 +17,7 @@ async function newBlips() {
             const x = Number(xyz[ID_X]);
             const y = Number(xyz[ID_Y]);
             const z = Number(xyz[ID_Z]);
-            mp.blips.new(iconId, new mp.Vector3(x, y, z),
+            mp.blips.new(item.sprite, new mp.Vector3(x, y, z),
                 {
                     name: item.name,
                     color: item.color,
