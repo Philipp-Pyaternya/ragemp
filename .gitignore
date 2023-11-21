@@ -1,0 +1,8 @@
+libs/node_modules
+bin
+dotnet
+maps
+plugins
+*.dll
+*.exe
+ragemp-server
