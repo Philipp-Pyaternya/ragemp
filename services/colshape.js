@@ -1,5 +1,4 @@
 const { Colshapes } = require('../libs/sequelize/models')
-const { createColshape } = require('../utils/colshape');
 
 function getColshapes() {
     // for future searching functionality of colshapes 
@@ -10,7 +9,8 @@ async function newColshapes() {
     try {
         const colshapes = await getColshapes();
         colshapes.map(item => {
-            const colshape = createColshape(item.x, item.y, item.range)
+
+            const colshape = mp.colshapes.newCircle(item.x, item.y, item.range);
 
             mp.events.add("playerEnterColshape", (player, shape) => {
                 if (shape === colshape) {

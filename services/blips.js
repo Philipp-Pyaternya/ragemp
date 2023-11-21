@@ -1,5 +1,8 @@
 const { Blips } = require('../libs/sequelize/models')
-const { createBlips } = require('../utils/bilps');
+
+const ID_X = 0;
+const ID_Y = 1;
+const ID_Z = 2;
 
 function getBlips() {
     // for future searching functionality of blips
@@ -10,7 +13,16 @@ async function newBlips() {
     try {
         const blips = await getBlips();
         blips?.map((item) => {
-            createBlips(item.sprite, item.position, item.name, item.color, item.shortRange);
+            const xyz = item.position?.split(',');
+            const x = Number(xyz[ID_X]);
+            const y = Number(xyz[ID_Y]);
+            const z = Number(xyz[ID_Z]);
+            mp.blips.new(iconId, new mp.Vector3(x, y, z),
+                {
+                    name: item.name,
+                    color: item.color,
+                    shortRange: item.shortRange
+                })
         })
     } catch (error) {
         console.error('Error getBlips:', error);
